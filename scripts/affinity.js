@@ -20,7 +20,7 @@ $(window).on('load', function(){
     
     var dwn = document.getElementById('downloadBtn');
     dwn.onclick = function(){
-        download(canvas, 'myimage.png');
+        download(canvas, 'affinity.png');
       }
     
 });
@@ -78,7 +78,8 @@ function initPortraitImages(){
     dirnpc + 'maurice.png',
     dirnpc + 'rock.png',
     dirnpc + 'tatsu.png',
-    dirnpc + 'vandham.png'
+    dirnpc + 'vandham.png',
+    dirportrait + 'default.png'
     
   ];
   for(var i = 0; i < portraitSources.length; i++){

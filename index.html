@@ -19,7 +19,7 @@
 
   <body>
       <div class="container">
-        <div class="title">Xenoblade X Affinity Customizer</div>
+        <div class="title">Xenoblade Chronicles X <br> Affinity Customizer</div>
         <div class="helpme"></div>
         <div id="affinityHub">
             <div class="col-xs-12 col-md-12">
@@ -28,7 +28,6 @@
                 </canvas>
             </div>
         </div>
-        
 
         
         <div class="portraitmenu row">
@@ -37,9 +36,34 @@
                     <div><label>Select First Portrait</label></div>
                     <div>
                         <select id="portrait1Select" class="form-control">
-                            <option id="0" value="0" selected>Elma</option>
-                            <option id="1" value="1">Irina</option>
                             <option id="custom" value="custom">Custom</option>
+                            <option disabled>----Party Members----</option>
+                            <option id="0" value="0" selected>Elma</option>
+                            <option id="1" value="1">Lin</option>
+                            <option id="2" value="2">Alexa</option>
+                            <option id="3" value="3">Boze</option>
+                            <option id="4" value="4">Celica</option>
+                            <option id="5" value="5">Doug</option>
+                            <option id="6" value="6">Frye</option>
+                            <option id="7" value="7">Gwin</option>
+                            <option id="8" value="8">H.B.</option>
+                            <option id="9" value="9">Hope</option>
+                            <option id="10" value="10">Irina</option>
+                            <option id="11" value="11">L</option>
+                            <option id="12" value="12">Lao</option>
+                            <option id="13" value="13">Mia</option>
+                            <option id="14" value="14">Murderess</option>
+                            <option id="15" value="15">Nagi</option>
+                            <option id="16" value="16">Phog</option>
+                            <option id="17" value="17">Yelv</option>
+                            <option id="18" value="18">TF Elma</option>
+                            <option disabled>----NPCs----</option>
+                            <option id="19" value="19">Ada</option>
+                            <option id="20" value="20">Eleonora</option>
+                            <option id="21" value="21">Maurice</option>
+                            <option id="22" value="22">Rock</option>
+                            <option id="23" value="23">Tatsu</option>
+                            <option id="24" value="24">Vandham</option>
                         </select>
                     </div>
                 </div>
@@ -49,9 +73,34 @@
                     <div><label>Select Second Portrait</label></div>
                     <div>                        
                         <select id="portrait2Select" class="portrait-select form-control">
-                            <option id="0" value="0">Elma</option>
-                            <option id="1" value="1" selected>Irina</option>
                             <option id="custom" value="custom">Custom</option>
+                            <option disabled>----Party Members----</option>
+                            <option id="0" value="0">Elma</option>
+                            <option id="1" value="1" selected>Lin</option>
+                            <option id="2" value="2">Alexa</option>
+                            <option id="3" value="3">Boze</option>
+                            <option id="4" value="4">Celica</option>
+                            <option id="5" value="5">Doug</option>
+                            <option id="6" value="6">Frye</option>
+                            <option id="7" value="7">Gwin</option>
+                            <option id="8" value="8">H.B.</option>
+                            <option id="9" value="9">Hope</option>
+                            <option id="10" value="10">Irina</option>
+                            <option id="11" value="11">L</option>
+                            <option id="12" value="12">Lao</option>
+                            <option id="13" value="13">Mia</option>
+                            <option id="14" value="14">Murderess</option>
+                            <option id="15" value="15">Nagi</option>
+                            <option id="16" value="16">Phog</option>
+                            <option id="17" value="17">Yelv</option>
+                            <option id="18" value="18">TF Elma</option>
+                            <option disabled>----NPCs----</option>
+                            <option id="19" value="19">Ada</option>
+                            <option id="20" value="20">Eleonora</option>
+                            <option id="21" value="21">Maurice</option>
+                            <option id="22" value="22">Rock</option>
+                            <option id="23" value="23">Tatsu</option>
+                            <option id="24" value="24">Vandham</option>
                         </select>
                     </div>
                 </div>
@@ -84,19 +133,19 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group">
                     <div><label>Second Portrait name</label></div>
-                    <div><input id="portrait2Name" class="form-control" type="text" value="Irina"/></div>
+                    <div><input id="portrait2Name" class="form-control" type="text" value="Lin"/></div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group">
                     <div><label>First Relationship</label></div>
-                    <div><input id="relationship1Text" class="form-control" type="text" value="Precious Comrade"/></div>
+                    <div><input id="relationship1Text" class="form-control" type="text" value="Dedicated Guardian"/></div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group">
                     <div><label>Second Relationship</label></div>
-                    <div><input id="relationship2Text" class="form-control" type="text" value="Together Forever"/></div>
+                    <div><input id="relationship2Text" class="form-control" type="text" value="Motherly Love"/></div>
                 </div>
             </div>
         </div>
@@ -114,8 +163,9 @@
         </div>
         
         <div class="row">
-            <div class="col-xs-12 col-md-12" style="padding:20px;">
+            <div id="generateDiv" class="col-xs-12 col-md-12" style="padding:20px;">
                 <button id="generateBtn" class="btn btn-default" onclick="generateImage()">Generate</button>
+                <button id="downloadBtn" class="btn btn-default">Download</button>
             </div>
         </div>
         <div class="instructions">To save your image, right click on canvas and click Save Image As</div>

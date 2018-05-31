@@ -9,11 +9,20 @@ var customImage2Flag = false;
 var customImage1 = '';
 var customImage2 = '';
 
+var dirportrait = 'img/portrait/';
+var dirnpc = 'img/portrait/npcs/';
+
 initBaseImage();
 initPortraitImages();    
 $(window).on('load', function(){
     initCanvas();
     generateImage();
+    
+    var dwn = document.getElementById('downloadBtn');
+    dwn.onclick = function(){
+        download(canvas, 'myimage.png');
+      }
+    
 });
 
 $(document).ready(function(){
@@ -45,9 +54,32 @@ function initBaseImage(){
 
 function initPortraitImages(){
   var portraitSources = [
-    'img/portrait/elma.png',
-    'img/portrait/irina.png',
-    'img/portrait/default.png'
+    dirportrait + 'elma.png',
+    dirportrait + 'lin.png',
+    dirportrait + 'alexa.png',
+    dirportrait + 'boze.png',
+    dirportrait + 'celica.png',
+    dirportrait + 'doug.png',
+    dirportrait + 'frye.png',
+    dirportrait + 'gwin.png',
+    dirportrait + 'hb.png',
+    dirportrait + 'hope.png',
+    dirportrait + 'irina.png',
+    dirportrait + 'l.png',
+    dirportrait + 'lao.png',
+    dirportrait + 'mia.png',
+    dirportrait + 'murderess.png',
+    dirportrait + 'nagi.png',
+    dirportrait + 'phog.png',
+    dirportrait + 'yelv.png',
+    dirportrait + 'tfelma.png',
+    dirnpc + 'ada.png',
+    dirnpc + 'eleonora.png',
+    dirnpc + 'maurice.png',
+    dirnpc + 'rock.png',
+    dirnpc + 'tatsu.png',
+    dirnpc + 'vandham.png'
+    
   ];
   for(var i = 0; i < portraitSources.length; i++){
       var src = portraitSources[i];
@@ -56,6 +88,7 @@ function initPortraitImages(){
           //console.log("images loaded");
       }
       img.src = src;
+      img.crossorigin="anonymous";
       portraitImages.push(img);
   }
 }
@@ -85,6 +118,25 @@ function unsetBase64(fileFlag) {
         customImage2 = '';
     }
 }
+
+function download(canvas, filename) {
+  var lnk = document.createElement('a'), e;
+  lnk.download = filename;
+  lnk.href = canvas.toDataURL("image/png;base64");
+
+  /// create a "fake" click-event to trigger the download
+  if (document.createEvent) {
+    e = document.createEvent("MouseEvents");
+    e.initMouseEvent("click", true, true, window,
+                     0, 0, 0, 0, 0, false, false, false,
+                     false, 0, null);
+
+    lnk.dispatchEvent(e);
+  } else if (lnk.fireEvent) {
+    lnk.fireEvent("onclick");
+  }
+}
+
 
 function generateImage(){
     var select1 = $('#portrait1Select').val();

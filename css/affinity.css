@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'futuremedium';
+    src: url('futuremedium-webfont.woff2') format('woff2'),
+         url('futuremedium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'newrodin';
+    src: url('newrodin-webfont.woff2') format('woff2'),
+         url('newrodin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'futuremedium';
+    background-color: #1C3C37;
+    color: #FFFFFF;
+}
+
+.canvas-class {
+    font-family: 'newrodin';
+}
+
+
+.title {
+    padding : 30px;
+    font-size: 36px;
+}
+
+.container {
+    width : 50%;
+    text-align: center;
+}
+
+.optionmenu {
+    padding: 20px;
+}
+
+
+
+label {font-weight:bold}

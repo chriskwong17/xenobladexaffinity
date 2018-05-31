@@ -149,6 +149,10 @@ function generate(select1, select2, name1, name2, relationship1, relationship2){
     
     context.textAlign = "right";
     context.fillText(name2,390,183); 
+    
+    context.font = "12px " + "futuremedium";
+    context.textAlign = "right";
+    context.fillText("image generated from: https://chriskwong17.github.io/xenobladexaffinity/",430,280); 
 }
 
 

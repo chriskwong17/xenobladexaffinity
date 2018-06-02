@@ -212,11 +212,41 @@ function generate(select1, select2, name1, name2, relationship1, relationship2){
 function twitterShare(){
     var dataURL = $('#affinityCanvas')[0].toDataURL("image/png");
     $.oauthpopup({
-        path: '/auth/twitter.php',
+        path: './auth/twitter.php',
         callback: function () {
             console.log(window.twit);
             var data = new FormData();
             data.append('status', "Affinity Generated! " + window.location.href + " @kingddd17");
+            data.append('image', dataURL);
+            // oAuth Data
+            data.append('oauth_token', window.twit.oauth_token);
+            data.append('oauth_token_secret', window.twit.oauth_token_secret);
+            // Post to Twitter as an update with
+
+            return $.ajax({
+                url: './auth/share-on-twitter.php',
+                type: 'POST',
+                data: data,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    console.log('Posted to Twitter.');
+                    console.log(data);
+                }
+            });
+        }
+    });
+};
+
+function twitterShare(){
+    var dataURL = $('#affinityCanvas')[0].toDataURL("image/png");
+    $.oauthpopup({
+        path: '/auth/twitter.php',
+        callback: function () {
+            console.log(window.twit);
+            var data = new FormData();
+            data.append('status', "Affinity Generated! At:" + window.location.href + " @kingddd17");
             data.append('image', dataURL);
             // oAuth Data
             data.append('oauth_token', window.twit.oauth_token);

@@ -15,9 +15,9 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 session_start();
 
-define('CONSUMER_KEY', '*************');
-define('CONSUMER_SECRET', '************');
-define('OAUTH_CALLBACK', '*****************');
+define('CONSUMER_KEY', 'RysIWw8eGtG0IwZBwFi5w8vaM');
+define('CONSUMER_SECRET', 'DTS5vBp6nTwJY4p7cCiz48aWMmLychkaLdJTIIy0emJR7fw42J');
+
 
 //echo '<pre>'.print_r($_REQUEST).'</pre>';
 //exit;

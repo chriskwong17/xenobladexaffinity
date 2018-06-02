@@ -11,9 +11,9 @@ session_start();
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body);
 
-define('CONSUMER_KEY', '*************');
-define('CONSUMER_SECRET', '************');
-define('OAUTH_CALLBACK', '*****************');
+define('CONSUMER_KEY', 'RysIWw8eGtG0IwZBwFi5w8vaM');
+define('CONSUMER_SECRET', 'DTS5vBp6nTwJY4p7cCiz48aWMmLychkaLdJTIIy0emJR7fw42J');
+define('OAUTH_CALLBACK', 'http://localhost/xenobladexaffinity/auth/twitter-finish.php');
 
 // Part 1 of 2: Initial request from Satellizer.
 if (!isset($data->oauth_token) || !isset($data->oauth_verifier)) {

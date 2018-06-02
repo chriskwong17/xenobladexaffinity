@@ -209,5 +209,66 @@ function generate(select1, select2, name1, name2, relationship1, relationship2){
 }
 
 
+function twitterShare(){
+    var dataURL = $('#affinityCanvas')[0].toDataURL("image/png");
+    $.oauthpopup({
+        path: './auth/twitter.php',
+        callback: function () {
+            console.log(window.twit);
+            var data = new FormData();
+            data.append('status', "Affinity Generated! " + window.location.href + " @kingddd17");
+            data.append('image', dataURL);
+            // oAuth Data
+            data.append('oauth_token', window.twit.oauth_token);
+            data.append('oauth_token_secret', window.twit.oauth_token_secret);
+            // Post to Twitter as an update with
+
+            return $.ajax({
+                url: '/auth/share-on-twitter.php',
+                type: 'POST',
+                data: data,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    console.log('Posted to Twitter.');
+                    console.log(data);
+                }
+            });
+        }
+    });
+};
+
+
+// Twitter oauth handler
+$.oauthpopup = function (options) {
+    if (!options || !options.path) {
+        throw new Error("options.path must not be empty");
+    }
+    options = $.extend({
+        windowName: 'ConnectWithOAuth' // should not include space for IE
+        , windowOptions: 'location=0,status=0,width=800,height=400'
+        , callback: function () {
+            debugger;
+            //window.location.reload();
+        }
+    }, options);
+
+    var oauthWindow = window.open(options.path, options.windowName, options.windowOptions);
+    var oauthInterval = window.setInterval(function () {
+        if (oauthWindow.closed) {
+            window.clearInterval(oauthInterval);
+            options.callback();
+        }
+    }, 1000);
+};
+// END Twitter oauth handler
+
+//bind to element and pop oauth when clicked
+$.fn.oauthpopup = function (options) {
+    $this = $(this);
+    $this.click($.oauthpopup.bind(this, options));
+};
+
 
 

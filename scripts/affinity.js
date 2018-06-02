@@ -212,7 +212,7 @@ function generate(select1, select2, name1, name2, relationship1, relationship2){
 function twitterShare(){
     var dataURL = $('#affinityCanvas')[0].toDataURL("image/png");
     $.oauthpopup({
-        path: './auth/twitter.php',
+        path: '/auth/twitter.php',
         callback: function () {
             console.log(window.twit);
             var data = new FormData();
